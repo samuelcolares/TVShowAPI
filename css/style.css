@@ -204,6 +204,40 @@ footer {
     padding: 0 10px;
 }
 
+@media screen and (min-width: 2560px) {
+    .title-wrapper .imdb-link,
+    .title-wrapper .title {
+        font-size: 80px;
+    }
+
+    .genres li,
+    .status-wrapper .circle {
+        font-size: 25px;
+    }
+    .status-wrapper,
+    .release,
+    .randomShow,
+    .btn {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 60px;
+    }
+    .summary-wrapper {
+        max-height: 450px;
+    }
+    summary, .input {
+        font-size: 32px;
+    }
+
+    .search {
+        height: 60px;
+    }
+
+    .input.open {
+        width: 300px;
+    }
+}
 @media screen and (max-width: 1728px) {
     .container {
         background-color: rgb(207, 198, 198);
@@ -235,7 +269,6 @@ footer {
     summary {
         padding: 10px;
     }
-    
 }
 @media screen and (max-width: 1023px) {
     .container {
@@ -257,7 +290,7 @@ footer {
     }
 
     .title-wrapper .imdb-link,
-    .title-wrapper .imdb-link {
+    .title-wrapper .title {
         font-size: 40px;
     }
 
@@ -338,7 +371,6 @@ footer {
         font-size: 20px;
     }
 }
-
 
 /* @media screen and (max-width: 425px) {
     body {
