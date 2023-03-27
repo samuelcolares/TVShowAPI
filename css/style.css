@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
 }
 
 body {
@@ -15,11 +16,21 @@ body {
     display: grid;
     place-content: center;
     height: 100vh;
-    background-color: rgb(77, 9, 62);
+    background-image: url(../img/2180133.jpg);
+    /* background-size: cover; */
+    background-color: rgba(41, 37, 40, 0.664);
+    /* background-color: rgba(66, 43, 167, 0.589); */
+    background-blend-mode: overlay;
+    position: relative;
 }
+
 /* ===Card principal (2 Elementos: imagem e conteúdo)===*/
 .container {
-    background-color: rgb(207, 198, 198);
+    background-color: rgba(78, 72, 72, 0.747);
+    background-image: url(../img/2180133.jpg);
+    background-size: cover;
+    background-blend-mode: overlay;
+    position: relative;
     border-radius: 10px;
     width: 70vw;
     height: 70vh;
@@ -38,6 +49,7 @@ img {
 
 /* ---Elemento 2: Conteúdo--- */
 .wrapper {
+    /* background-color: rgba(207, 198, 198, 0.486); */
     flex: 2;
     text-align: center;
     height: 100%;
@@ -126,15 +138,21 @@ img {
 }
 .summary-wrapper::-webkit-scrollbar {
     width: 0.5em;
+    transition: border-color 1s;
 }
 .summary-wrapper::-webkit-scrollbar-track {
-    background: rgb(141, 138, 138);
+    background: rgb(74, 53, 100);
     border-radius: 100vw;
 }
 .summary-wrapper::-webkit-scrollbar-thumb {
-    background: rgb(77, 9, 62);
-    border: 0.25em solid rgb(77, 9, 62);
+    background: rgba(77, 9, 62, 0.39);
+    border: 0.25em solid rgba(77, 9, 62, 0.671);
     border-radius: 100vw;
+    transition: border-color 1s;
+}
+.summary-wrapper:hover::-webkit-scrollbar-thumb {
+    background-image: url(../img/2180133.jpg);
+    transition: border-color 1s;
 }
 summary {
     padding: 20px;
@@ -176,8 +194,9 @@ footer {
     transition: 0.4s ease;
 }
 .search.open {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.507);
 }
+
 
 .input {
     background: none;
@@ -202,6 +221,13 @@ footer {
     cursor: pointer;
     font-size: 30px;
     padding: 0 10px;
+}
+.btn i{
+    transition: .4s;
+}
+
+.search.open .btn i{
+    color: black !important;
 }
 
 @media screen and (min-width: 2560px) {
@@ -240,7 +266,6 @@ footer {
 }
 @media screen and (max-width: 1728px) {
     .container {
-        background-color: rgb(207, 198, 198);
         border-radius: 10px;
         width: 70vw;
         height: 70vh;
@@ -271,6 +296,9 @@ footer {
     }
 }
 @media screen and (max-width: 1023px) {
+    body{
+        height: 100dvh !important;
+    }
     .container {
         display: grid;
         place-content: center;
@@ -291,7 +319,7 @@ footer {
 
     .title-wrapper .imdb-link,
     .title-wrapper .title {
-        font-size: 40px;
+        font-size: 30px;
     }
 
     .genres li {
@@ -342,8 +370,11 @@ footer {
         width: 90vw;
         height: 90vh;
     }
+    .wrapper .title {
+        font-size: 20px;
+    }
     img {
-        width: 90%;
+        width: 85%;
         margin: 0 auto;
     }
     .release {

@@ -10,11 +10,29 @@ const genresList = document.querySelector('.genres')
 
 const summary = document.querySelector('summary')
 
-function tvShowLoad(random) {
-  fetch(`https://api.tvmaze.com/shows/${random}`)
-    .then(response => response.json())
-    .then(outputRandom)
-}
+  
+async function tvShowLoad(random){
+    const config = {
+      headers: {
+        Accept: 'Application/json',
+      },
+    }
+
+    const response = await fetch(`https://api.tvmaze.com/shows/${random}`, config)
+    const data = await response.json()
+    outputRandom(data)
+
+  }
+
+
+
+
+
+// function tvShowLoad(random) {
+//   fetch(`https://api.tvmaze.com/shows/${random}`)
+//     .then(response => response.json())
+//     .then(outputRandom)
+// }
 
 function tvShowSearch(tvShow) {
   fetch(`https://api.tvmaze.com/singlesearch/shows?q=${tvShow}`)
